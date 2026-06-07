@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/LOQ/Downloads/index.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrijan | Digital Marketing &amp; Music</title>
+  <link href="./index_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #10101a;
+      --gold: #d4af37;
+      --gold2: #e8c97a;
+      --cream: #f5efe0;
+      --muted: #555;
+      --accent: #7b5ea7;
+      --red: #c94c4c;
+      --text: #f5efe0;
+      --border: rgba(201, 168, 76, 0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+  background: linear-gradient(135deg, #f5efe0, #e8d8b5, #d4af37);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 4rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(123,94,167,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%),
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px);
+    }
+
+    /* animated musical notes floating */
+    .note {
+      position: absolute;
+      font-size: 1.4rem;
+      opacity: 0;
+      color: var(--gold);
+      animation: floatNote linear infinite;
+    }
+    @keyframes floatNote {
+      0%   { opacity: 0; transform: translateY(0) rotate(0deg); }
+      10%  { opacity: 0.25; }
+      90%  { opacity: 0.1; }
+      100% { opacity: 0; transform: translateY(-100vh) rotate(360deg); }
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--cream);
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+    h1 span { color: var(--gold); font-style: italic; }
+
+    .hero-sub {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      max-width: 600px;
+      margin-left: auto; margin-right: auto;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.6s forwards;
+    }
+
+    .hero-ctas {
+      display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.8s forwards;
+    }
+
+    .btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+    .btn:hover { color: var(--bg); }
+    .btn:hover::before { transform: scaleX(1); }
+    .btn-fill { background: var(--gold); color: var(--bg); }
+    .btn-fill::before { background: var(--gold2); }
+    .btn-fill:hover { color: var(--bg); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 4rem; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .divider {
+      width: 60px; height: 1px;
+      background: var(--gold);
+      margin: 1.5rem 0;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--bg2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-photo-area {
+      position: relative;
+    }
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border: 1px solid var(--border);
+      background: rgba(201,168,76,0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.3s;
+    }
+    .photo-frame:hover { border-color: var(--gold); }
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      top: 8px; left: 8px; right: -8px; bottom: -8px;
+      border: 1px solid rgba(201,168,76,0.15);
+      pointer-events: none;
+    }
+    .photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .photo-frame img.loaded { display: block; }
+    .photo-placeholder {
+      text-align: center;
+      pointer-events: none;
+    }
+    .photo-placeholder svg { opacity: 0.3; margin-bottom: 0.5rem; }
+    .photo-placeholder p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    #photoInput { display: none; }
+
+    .about-text p { color: rgba(232,224,208,0.75); margin-bottom: 1.2rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .tag.gold { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+    }
+    .service-card {
+      padding: 2.5rem;
+      border: 1px solid transparent;
+      background: var(--bg2);
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { background: rgba(201,168,76,0.05); border-color: var(--border); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .service-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .service-card p { font-size: 0.95rem; color: rgba(232,224,208,0.65); line-height: 1.8; }
+
+    /* ── MUSIC ── */
+    #music {
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+    #music::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse 70% 50% at 80% 50%, rgba(123,94,167,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .music-intro { max-width: 600px; margin-bottom: 3.5rem; }
+    .music-intro p { color: rgba(232,224,208,0.7); }
+
+    .instruments-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .instrument {
+      background: var(--bg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .instrument::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(123,94,167,0.08));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .instrument:hover::before { opacity: 1; }
+    .instrument:hover { transform: translateY(-4px); }
+    .instrument-emoji { font-size: 2.8rem; display: block; margin-bottom: 0.8rem; }
+    .instrument h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.4rem;
+    }
+    .instrument-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .music-offer {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .offer-card {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .offer-card::before {
+      content: attr(data-num);
+      position: absolute;
+      top: -1rem; left: 1.5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      color: rgba(201,168,76,0.08);
+      line-height: 1;
+      font-weight: 600;
+    }
+    .offer-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 0.7rem;
+    }
+    .offer-card p { font-size: 0.95rem; color: rgba(232,224,208,0.65); }
+
+    /* ── PSYCHOLOGY ── */
+    #psychology {
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .psych-visual {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .psych-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid;
+      animation: rotate linear infinite;
+    }
+    .psych-circle:nth-child(1) {
+      width: 300px; height: 300px;
+      border-color: rgba(201,168,76,0.15);
+      animation-duration: 20s;
+    }
+    .psych-circle:nth-child(2) {
+      width: 220px; height: 220px;
+      border-color: rgba(123,94,167,0.2);
+      animation-duration: 14s;
+      animation-direction: reverse;
+    }
+    .psych-circle:nth-child(3) {
+      width: 140px; height: 140px;
+      border-color: rgba(201,168,76,0.25);
+      animation-duration: 9s;
+    }
+    .psych-core {
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .psych-core span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      display: block;
+    }
+    .psych-core strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .psych-text p { color: rgba(232,224,208,0.7); margin-bottom: 1rem; }
+    .psych-detail {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+    .psych-detail p { font-style: italic; color: rgba(232,224,208,0.6); font-size: 0.95rem; }
+
+    /* ── GALLERY ── */
+    #gallery {
+      background: var(--bg2);
+    }
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      min-height: 300px;
+    }
+    .gallery-slot {
+      background: var(--bg);
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-slot:hover { background: rgba(201,168,76,0.06); }
+    .gallery-slot img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .gallery-slot img.loaded { display: block; }
+    .gallery-slot .slot-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .gallery-slot svg { opacity: 0.2; }
+    #galleryInput { display: none; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--bg);
+      text-align: center;
+      padding: 8rem 4rem;
+    }
+    #contact .divider { margin: 1.5rem auto; }
+    #contact p { color: rgba(232,224,208,0.6); max-width: 500px; margin: 0 auto 2.5rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .contact-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .contact-link:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      #about, #psychology { grid-template-columns: 1fr; gap: 2.5rem; }
+      .instruments-grid { grid-template-columns: repeat(3, 1fr); }
+      .music-offer { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      #hero { padding: 7rem 1.5rem 3rem; }
+    }
+    @media (max-width: 600px) {
+      .instruments-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="file:///C:/Users/LOQ/Downloads/index.html#hero" class="nav-logo">MS</a>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#about">About</a></li>
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#services">Services</a></li>
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#music">Music</a></li>
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#psychology">Studies</a></li>
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#gallery">Gallery</a></li>
+    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- FLOATING NOTES -->
+<div id="notes-container" aria-hidden="true"><div class="note" style="left: 95.7271vw; top: 100vh; font-size: 1.46753rem; opacity: 0; animation-duration: 16.9235s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 94.621vw; top: 100vh; font-size: 1.24428rem; opacity: 0; animation-duration: 15.3129s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 86.744vw; top: 100vh; font-size: 2.38159rem; opacity: 0; animation-duration: 17.335s; animation-delay: 0s;">𝅘𝅥𝅮</div><div class="note" style="left: 17.8256vw; top: 100vh; font-size: 1.96217rem; opacity: 0; animation-duration: 15.5541s; animation-delay: 0s;">♪</div><div class="note" style="left: 83.9775vw; top: 100vh; font-size: 2.1777rem; opacity: 0; animation-duration: 11.0254s; animation-delay: 0s;">♩</div><div class="note" style="left: 53.122vw; top: 100vh; font-size: 1.63283rem; opacity: 0; animation-duration: 13.9102s; animation-delay: 0s;">𝅘𝅥𝅮</div><div class="note" style="left: 47.9103vw; top: 100vh; font-size: 1.59814rem; opacity: 0; animation-duration: 16.3198s; animation-delay: 0s;">♪</div><div class="note" style="left: 20.7246vw; top: 100vh; font-size: 1.73134rem; opacity: 0; animation-duration: 10.4882s; animation-delay: 0s;">♪</div><div class="note" style="left: 45.4834vw; top: 100vh; font-size: 1.18043rem; opacity: 0; animation-duration: 18.1372s; animation-delay: 0s;">♩</div><div class="note" style="left: 94.871vw; top: 100vh; font-size: 1.04627rem; opacity: 0; animation-duration: 13.8453s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 96.4213vw; top: 100vh; font-size: 2.41181rem; opacity: 0; animation-duration: 10.0167s; animation-delay: 0s;">♩</div><div class="note" style="left: 33.0403vw; top: 100vh; font-size: 1.62022rem; opacity: 0; animation-duration: 8.81347s; animation-delay: 0s;">♬</div><div class="note" style="left: 25.5796vw; top: 100vh; font-size: 2.18588rem; opacity: 0; animation-duration: 9.30924s; animation-delay: 0s;">𝅘𝅥𝅮</div></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-tag">— Digital · Music · Psychology —</p>
+    <h1>Shrijan<br><span>MS</span></h1>
+    <p class="hero-sub">Digital marketing strategist, musician of sacred Nepali instruments, and a student of the human mind.</p>
+    <div class="hero-ctas">
+      <a href="file:///C:/Users/LOQ/Downloads/index.html#services" class="btn btn-fill">My Services</a>
+      <a href="file:///C:/Users/LOQ/Downloads/index.html#contact" class="btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-photo-area reveal visible">
+    <div class="photo-frame" id="profilePhotoFrame" title="Click to upload your photo">
+      <img id="profilePhoto" alt="Shrijan" src="blob:null/14cf0359-7fda-472c-b0fe-6a660703fa01" class="loaded">
+      <div class="photo-placeholder" id="profilePlaceholder" style="display: none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" color="#c9a84c">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <p>Click to upload<br>your photo</p>
+      </div>
+    </div>
+    <input type="file" id="photoInput" accept="image/*">
+  </div>
+
+  <div class="about-text reveal visible">
+    <p class="section-label">About Me</p>
+    <h2>Creativity<br>Meets Strategy</h2>
+    <div class="divider"></div>
+    <p>I am Shrijan — a digital marketing professional with a passion for growing brands online through data-driven strategies and compelling storytelling. My work spans SEO, social media, content creation, and paid campaigns.</p>
+    <p>Beyond the screen, I carry the music of Nepal in my hands — from the resonant dhime drum to the soulful flute. I teach and perform, preserving tradition while embracing modern artistry.</p>
+    <p>I am currently pursuing a <strong>Master's degree in Psychology</strong>, deepening my understanding of human behaviour to craft marketing and communication that truly connects.</p>
+    <div class="tags">
+      <span class="tag gold">Digital Marketing</span>
+      <span class="tag gold">Musician</span>
+      <span class="tag gold">MSc Psychology</span>
+      <span class="tag">Nepal</span>
+      <span class="tag">Educator</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal visible">
+    <p class="section-label">What I Do</p>
+    <h2>Digital Marketing<br>Services</h2>
+    <div class="divider"></div>
+    <p style="color:rgba(232,224,208,0.6); max-width:580px;">From building your brand's voice online to converting visitors into loyal customers — I help individuals and businesses grow digitally.</p>
+  </div>
+
+  <div class="services-grid reveal visible">
+    <div class="service-card">
+      <span class="service-icon">📈</span>
+      <h3>Social Media Marketing</h3>
+      <p>Strategic content planning, community management, and growth campaigns across Instagram, Facebook, TikTok, and more.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <h3>SEO &amp; Content Strategy</h3>
+      <p>Keyword research, on-page optimisation, and long-form content that ranks and converts.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎯</span>
+      <h3>Paid Advertising</h3>
+      <p>ROI-focused ad campaigns on Google, Meta, and YouTube — targeting the right audience at the right moment.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">✍️</span>
+      <h3>Brand Identity &amp; Copywriting</h3>
+      <p>Crafting your brand's story, voice, and visual language that resonates deeply with your target audience.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📧</span>
+      <h3>Email Marketing</h3>
+      <p>Building automated sequences, newsletters, and drip campaigns that nurture and convert leads into customers.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📊</span>
+      <h3>Analytics &amp; Reporting</h3>
+      <p>Data interpretation, performance dashboards, and actionable insights to continually optimise your marketing efforts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <div class="music-intro reveal visible">
+    <p class="section-label">The Art of Sound</p>
+    <h2>Music &amp;<br>Instruments</h2>
+    <div class="divider"></div>
+    <p>Rooted in Nepali musical tradition, I play and teach a range of instruments — from ancient folk percussion to the expressive guitar. Music is my meditation and my message.</p>
+  </div>
+
+  <div class="instruments-grid reveal visible">
+    <div class="instrument">
+      <span class="instrument-emoji">🎵</span>
+      <h4>Flute</h4>
+      <span class="instrument-role">Play &amp; Teach</span>
+    </div>
+    <div class="instrument">
+      <span class="instrument-emoji">🥁</span>
+      <h4>Pachima</h4>
+      <span class="instrument-role">Play &amp; Teach</span>
+    </div>
+    <div class="instrument">
+      <span class="instrument-emoji">🪘</span>
+      <h4>Dhime</h4>
+      <span class="instrument-role">Play &amp; Teach</span>
+    </div>
+    <div class="instrument">
+      <span class="instrument-emoji">🎶</span>
+      <h4>Madal</h4>
+      <span class="instrument-role">Play &amp; Teach</span>
+    </div>
+    <div class="instrument">
+      <span class="instrument-emoji">🎸</span>
+      <h4>Guitar</h4>
+      <span class="instrument-role">Play &amp; Teach</span>
+    </div>
+  </div>
+
+  <div class="music-offer reveal visible">
+    <div class="offer-card" data-num="01">
+      <h3>Live Performance</h3>
+      <p>Available for cultural events, concerts, festivals, and private ceremonies. I bring the spirit of Nepali folk music to any occasion with authenticity and energy.</p>
+    </div>
+    <div class="offer-card" data-num="02">
+      <h3>Music Lessons</h3>
+      <p>One-on-one and group lessons for all levels — from complete beginners to advancing players. Structured curriculum tailored to your goals, in-person or online.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PSYCHOLOGY -->
+<section id="psychology">
+  <div class="psych-visual reveal visible">
+    <div class="psych-circle"></div>
+    <div class="psych-circle"></div>
+    <div class="psych-circle"></div>
+    <div class="psych-core">
+      <span>MSc</span>
+      <strong>Psychology</strong>
+    </div>
+  </div>
+
+  <div class="psych-text reveal visible">
+    <p class="section-label">Academic Pursuit</p>
+    <h2>The Study of<br>the Mind</h2>
+    <div class="divider"></div>
+    <p>I am currently enrolled in a <strong>Master's programme in Psychology</strong>, exploring the science of human thought, behaviour, and emotion.</p>
+    <p>This academic journey profoundly informs my work in digital marketing — understanding cognitive biases, emotional triggers, and decision-making helps me craft campaigns that connect on a deeper human level.</p>
+    <p>Psychology also enriches my music teaching: adapting to each student's learning style, building confidence, and nurturing creativity.</p>
+    <div class="psych-detail">
+      <p>"The intersection of psychology, art, and strategy is where truly meaningful communication is born."</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header reveal visible">
+    <div>
+      <p class="section-label">Portfolio</p>
+      <h2>Photos &amp;<br>Moments</h2>
+    </div>
+    <button class="btn" onclick="document.getElementById(&#39;galleryInput&#39;).click()">+ Upload Photos</button>
+  </div>
+
+  <input type="file" id="galleryInput" accept="image/*" multiple="">
+
+  <div class="gallery-grid reveal visible" id="galleryGrid"><div class="gallery-slot"><img src="blob:null/29e1dfc0-f115-4918-ab02-de504d7e80fa" alt="Gallery image 1" class="loaded"></div><div class="gallery-slot"><img src="blob:null/4c9c0467-c7e4-4f27-85af-7c76e5570f4f" alt="Gallery image 2" class="loaded"></div><div class="gallery-slot"><img src="blob:null/3a518cac-6468-46fb-8632-ea0bfd0125f2" alt="Gallery image 3" class="loaded"></div><div class="gallery-slot">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span class="slot-label">Add Photo</span></div></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="reveal visible">
+    <p class="section-label">Let's Connect</p>
+    <h2>Work With Me</h2>
+    <div class="divider"></div>
+    <p>Whether you need a digital marketing strategy, a music performance, or lessons — I'd love to hear from you.</p>
+<div class="contact-links">
+  <a href="mailto:shrijanmaharjan26@email.com" class="contact-link">Email me</a>
+
+  <a href="https://wa.me/9779863426739" target="_blank" class="contact-link">
+    Chat on WhatsApp
+  </a>
+
+  <a href="https://instagram.com/mshrijan" target="_blank" class="contact-link">
+    View Instagram
+  </a>
+</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Shrijan MS — mshrijan.com.np</span>
+  <span>Digital · Music · Psychology</span>
+</footer>
+
+<script>
+  /* ── Floating music notes ── */
+  const noteChars = ['♩','♪','♫','♬','𝅘𝅥𝅮','𝄞'];
+  const container = document.getElementById('notes-container');
+  function spawnNote() {
+    const note = document.createElement('div');
+    note.className = 'note';
+    note.textContent = noteChars[Math.floor(Math.random() * noteChars.length)];
+    note.style.left = Math.random() * 100 + 'vw';
+    note.style.top = '100vh';
+    note.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+    note.style.opacity = '0';
+    const dur = 8 + Math.random() * 12;
+    note.style.animationDuration = dur + 's';
+    note.style.animationDelay = '0s';
+    container.appendChild(note);
+    setTimeout(() => note.remove(), dur * 1000);
+  }
+  setInterval(spawnNote, 1200);
+
+  /* ── Scroll reveal ── */
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), 100);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  /* ── Profile photo upload ── */
+  document.getElementById('profilePhotoFrame').addEventListener('click', () => {
+    document.getElementById('photoInput').click();
+  });
+  document.getElementById('photoInput').addEventListener('change', function() {
+    const file = this.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    const img = document.getElementById('profilePhoto');
+    img.src = url;
+    img.classList.add('loaded');
+    document.getElementById('profilePlaceholder').style.display = 'none';
+  });
+
+  /* ── Gallery ── */
+  const SLOTS = 8;
+  const grid = document.getElementById('galleryGrid');
+  let galleryImages = [];
+
+  function renderGallery() {
+    grid.innerHTML = '';
+    for (let i = 0; i < SLOTS; i++) {
+      const slot = document.createElement('div');
+      slot.className = 'gallery-slot';
+      if (galleryImages[i]) {
+        const img = document.createElement('img');
+        img.src = galleryImages[i];
+        img.alt = 'Gallery image ' + (i + 1);
+        img.classList.add('loaded');
+        slot.appendChild(img);
+      } else {
+        slot.innerHTML = `
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="slot-label">Add Photo</span>`;
+        slot.addEventListener('click', () => document.getElementById('galleryInput').click());
+      }
+      grid.appendChild(slot);
+    }
+  }
+  renderGallery();
+
+  document.getElementById('galleryInput').addEventListener('change', function() {
+    const files = Array.from(this.files);
+    files.forEach(file => {
+      if (galleryImages.length < SLOTS) {
+        galleryImages.push(URL.createObjectURL(file));
+      }
+    });
+    renderGallery();
+    this.value = '';
+  });
+</script>
+
+
+</body></html>
