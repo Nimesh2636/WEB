@@ -1,915 +1,1189 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)file:///C:/Users/LOQ/Downloads/index.html# -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shrijan | Digital Marketing &amp; Music</title>
-  <link href="./index_files/css2" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shrijan Maharjan — Digital Marketing Professional specializing in content, social media and brand growth." />
+  <meta name="theme-color" content="#0d0d0f" />
+  <title>Shrijan Maharjan — Digital Marketing Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #0a0a0f;
-      --bg2: #10101a;
-      --gold: #d4af37;
-      --gold2: #e8c97a;
-      --cream: #f5efe0;
-      --muted: #555;
-      --accent: #7b5ea7;
-      --red: #c94c4c;
-      --text: #f5efe0;
-      --border: rgba(201, 168, 76, 0.2);
+    :root{
+      --bg:#0d0d0f;
+      --bg-2:#141418;
+      --card:#18181d;
+      --paper:#f4f1ea;
+      --paper-2:#ece8de;
+      --ink:#121216;
+      --text:#f7f5ef;
+      --muted:#a2a2ad;
+      --muted-dark:#676771;
+      --line:rgba(255,255,255,.09);
+      --line-dark:#d9d4c8;
+      --blue:#6c7cff;
+      --blue-2:#8a95ff;
+      --lime:#d8ff68;
+      --max:1180px;
+      --r:26px;
+      --shadow:0 28px 70px rgba(0,0,0,.24);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-  background: linear-gradient(135deg, #f5efe0, #e8d8b5, #d4af37);
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      line-height: 1.7;
-      overflow-x: hidden;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 4rem;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      letter-spacing: 0.2em;
-      text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--gold); }
+    a{color:inherit}
+    button{font:inherit}
+    img{display:block;max-width:100%}
+    ::selection{background:var(--lime);color:#111}
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 8rem 4rem 4rem;
+    .container{
+      width:min(var(--max),calc(100% - 40px));
+      margin:auto;
     }
 
-    .hero-bg {
-      position: absolute; inset: 0;
+    /* ---------- NAV ---------- */
+    .nav{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:1000;
+      background:rgba(13,13,15,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .nav-inner{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:11px;
+      text-decoration:none;
+      color:#fff;
+      font-family:"Manrope",sans-serif;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+    .brand-dot{
+      width:13px;height:13px;border-radius:50%;
+      background:var(--lime);
+      box-shadow:0 0 0 7px rgba(216,255,104,.08);
+    }
+    .nav-links{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:28px;
+      margin:0;padding:0;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:#bbbcc6;
+      font-size:.88rem;
+      font-weight:600;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{color:#fff}
+    .nav-links .contact-pill{
+      padding:10px 16px;
+      border-radius:999px;
+      background:#fff;
+      color:#111;
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+      padding:6px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding-top:74px;
       background:
-        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(123,94,167,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 60%),
-        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px),
-        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px);
+        radial-gradient(circle at 88% 18%,rgba(108,124,255,.28),transparent 27%),
+        radial-gradient(circle at 10% 85%,rgba(216,255,104,.08),transparent 25%),
+        var(--bg);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.3;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:64px 64px;
+      mask-image:linear-gradient(to bottom,black,transparent 92%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      width:100%;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:64px;
+      align-items:end;
+      padding:100px 0 86px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid rgba(255,255,255,.11);
+      background:rgba(255,255,255,.035);
+      padding:8px 12px;
+      border-radius:999px;
+      color:#d2d2da;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.73rem;
+      font-weight:700;
+    }
+    .hero-tag::before{
+      content:"";
+      width:8px;height:8px;border-radius:50%;
+      background:var(--lime);
+    }
+    h1{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(4.2rem,9.2vw,8.3rem);
+      line-height:.87;
+      letter-spacing:-.075em;
+      margin:25px 0 26px;
+      font-weight:800;
+      max-width:920px;
+    }
+    h1 span{color:var(--blue-2)}
+    .hero-lead{
+      max-width:700px;
+      margin:0 0 32px;
+      color:#b5b5bf;
+      font-size:clamp(1.05rem,1.6vw,1.23rem);
+    }
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      min-height:50px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 20px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:.9rem;
+      font-weight:700;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:var(--lime);
+      color:#111;
+    }
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(216,255,104,.15)}
+    .btn-ghost{
+      border-color:rgba(255,255,255,.15);
+      color:#fff;
+      background:rgba(255,255,255,.035);
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+    .hero-side{
+      display:grid;
+      gap:16px;
+    }
+    .hero-card{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:var(--r);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+      padding:26px;
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
+    }
+    .hero-card .small{
+      color:#8e8e99;
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+    .hero-card h3{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      font-size:1.5rem;
+      line-height:1.18;
+      letter-spacing:-.03em;
+    }
+    .hero-card p{
+      color:#a9a9b3;
+      margin:12px 0 0;
+      font-size:.93rem;
+    }
+    .quick-facts{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .fact{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:18px;
+      background:#111115;
+    }
+    .fact strong{
+      display:block;
+      font-family:"Manrope",sans-serif;
+      font-size:1.25rem;
+      color:#fff;
+    }
+    .fact span{
+      color:#858590;
+      font-size:.78rem;
     }
 
-    /* animated musical notes floating */
-    .note {
-      position: absolute;
-      font-size: 1.4rem;
-      opacity: 0;
-      color: var(--gold);
-      animation: floatNote linear infinite;
+    /* ---------- MARQUEE ---------- */
+    .marquee{
+      overflow:hidden;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#111114;
     }
-    @keyframes floatNote {
-      0%   { opacity: 0; transform: translateY(0) rotate(0deg); }
-      10%  { opacity: 0.25; }
-      90%  { opacity: 0.1; }
-      100% { opacity: 0; transform: translateY(-100vh) rotate(360deg); }
+    .marquee-track{
+      width:max-content;
+      display:flex;
+      gap:46px;
+      padding:18px 0;
+      animation:scroll 24s linear infinite;
+      color:#d2d2d8;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      font-weight:700;
     }
-
-    .hero-inner {
-      position: relative; z-index: 1;
-      max-width: 900px;
-      text-align: center;
+    .marquee-track span::after{
+      content:"✦";
+      margin-left:46px;
+      color:var(--lime);
     }
-
-    .hero-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.2s forwards;
+    @keyframes scroll{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
     }
 
-    h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(3rem, 9vw, 7rem);
-      font-weight: 400;
-      line-height: 1.05;
-      color: var(--cream);
-      opacity: 0;
-      animation: fadeUp 0.9s 0.4s forwards;
+    /* ---------- LIGHT SECTIONS ---------- */
+    .light{
+      background:var(--paper);
+      color:var(--ink);
     }
-    h1 span { color: var(--gold); font-style: italic; }
-
-    .hero-sub {
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--muted);
-      margin-top: 1.5rem;
-      max-width: 600px;
-      margin-left: auto; margin-right: auto;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.6s forwards;
+    .section{
+      padding:102px 0;
+      scroll-margin-top:74px;
     }
-
-    .hero-ctas {
-      display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
-      margin-top: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.8s forwards;
+    .section-head{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:50px;
+      align-items:end;
+      margin-bottom:48px;
     }
-
-    .btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.85rem 2.2rem;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+    .eyebrow{
+      margin:0 0 10px;
+      color:var(--blue);
+      font-size:.76rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.14em;
     }
-    .btn::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--gold);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s;
-      z-index: -1;
+    h2{
+      margin:0;
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2.6rem,5vw,4.8rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+      color:inherit;
     }
-    .btn:hover { color: var(--bg); }
-    .btn:hover::before { transform: scaleX(1); }
-    .btn-fill { background: var(--gold); color: var(--bg); }
-    .btn-fill::before { background: var(--gold2); }
-    .btn-fill:hover { color: var(--bg); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .section-head p:last-child{
+      margin:0;
+      max-width:650px;
+      color:var(--muted-dark);
+      font-size:1.05rem;
     }
 
-    /* ── SECTION BASE ── */
-    section { padding: 6rem 4rem; }
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
+    /* ---------- SELECTED WORK ---------- */
+    .work-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
     }
-    h2 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 1rem;
+    .work-card{
+      min-height:500px;
+      border-radius:28px;
+      overflow:hidden;
+      position:relative;
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      text-decoration:none;
+      transition:.25s ease;
+      isolation:isolate;
     }
-    .divider {
-      width: 60px; height: 1px;
-      background: var(--gold);
-      margin: 1.5rem 0;
+    .work-card:hover{transform:translateY(-5px)}
+    .work-card.large{
+      color:#fff;
+      background:
+        radial-gradient(circle at 75% 20%,rgba(216,255,104,.20),transparent 26%),
+        linear-gradient(145deg,#202278,#5a68ff 62%,#7581ff);
+      box-shadow:0 24px 65px rgba(64,77,208,.22);
+    }
+    .work-card.dark{
+      color:#fff;
+      background:
+        radial-gradient(circle at 84% 20%,rgba(108,124,255,.26),transparent 24%),
+        #16161a;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .work-card.cream{
+      color:var(--ink);
+      background:#e8e2d6;
+      border:1px solid #d6cfc2;
+      min-height:310px;
+    }
+    .work-card .work-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:flex-start;
+    }
+    .work-label{
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-weight:800;
+      opacity:.7;
+    }
+    .work-arrow{
+      width:42px;height:42px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      border:1px solid currentColor;
+      opacity:.65;
+      font-size:1.15rem;
+    }
+    .work-card h3{
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2rem,3.4vw,3.1rem);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      margin:0 0 12px;
+    }
+    .work-card p{
+      max-width:590px;
+      margin:0;
+      opacity:.78;
+      font-size:.96rem;
+    }
+    .work-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:20px;
+    }
+    .work-meta span{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid currentColor;
+      opacity:.72;
+      font-size:.75rem;
+      font-weight:700;
+    }
+    .work-stack{display:grid;gap:20px}
+    .graphic-board{
+      position:absolute;
+      right:-35px;
+      top:90px;
+      width:58%;
+      aspect-ratio:1;
+      border-radius:28px;
+      transform:rotate(7deg);
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.17);
+      box-shadow:0 24px 55px rgba(0,0,0,.15);
+      z-index:-1;
+    }
+    .graphic-board::before,.graphic-board::after{
+      content:"";
+      position:absolute;
+      left:12%;right:12%;
+      border-radius:999px;
+      height:13%;
+      background:rgba(255,255,255,.18);
+    }
+    .graphic-board::before{top:18%}
+    .graphic-board::after{top:40%;right:36%}
+
+    /* ---------- CAPABILITIES ---------- */
+    .cap-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .cap-card{
+      min-height:245px;
+      border-radius:24px;
+      padding:25px;
+      background:#fff;
+      border:1px solid var(--line-dark);
+      transition:.2s ease;
+    }
+    .cap-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 45px rgba(29,28,27,.08);
+    }
+    .cap-num{
+      color:var(--blue);
+      font-family:"Manrope",sans-serif;
+      font-weight:800;
+      font-size:.9rem;
+      margin-bottom:48px;
+    }
+    .cap-card h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.15rem;
+      margin:0 0 9px;
+      letter-spacing:-.025em;
+    }
+    .cap-card p{
+      color:#6e6c67;
+      margin:0;
+      font-size:.92rem;
     }
 
-    /* ── ABOUT ── */
-    #about {
-      background: var(--bg2);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+    /* ---------- STRATEGY / PSYCHOLOGY ---------- */
+    .strategy{
+      background:#111114;
+      color:#fff;
     }
-    .about-photo-area {
-      position: relative;
+    .strategy .section-head p:last-child{color:#9999a3}
+    .strategy .eyebrow{color:var(--lime)}
+    .strategy-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
     }
-    .photo-frame {
-      width: 100%;
-      aspect-ratio: 3/4;
-      border: 1px solid var(--border);
-      background: rgba(201,168,76,0.04);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color 0.3s;
+    .strategy-copy{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:34px;
+      background:#17171b;
     }
-    .photo-frame:hover { border-color: var(--gold); }
-    .photo-frame::before {
-      content: '';
-      position: absolute;
-      top: 8px; left: 8px; right: -8px; bottom: -8px;
-      border: 1px solid rgba(201,168,76,0.15);
-      pointer-events: none;
+    .strategy-copy h3{
+      font-family:"Manrope",sans-serif;
+      margin:0 0 14px;
+      font-size:1.6rem;
+      letter-spacing:-.035em;
     }
-    .photo-frame img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: none;
+    .strategy-copy p{
+      margin:0;
+      color:#a6a6b0;
     }
-    .photo-frame img.loaded { display: block; }
-    .photo-placeholder {
-      text-align: center;
-      pointer-events: none;
+    .principles{
+      display:grid;
+      gap:12px;
     }
-    .photo-placeholder svg { opacity: 0.3; margin-bottom: 0.5rem; }
-    .photo-placeholder p {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .principle{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:15px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.08);
+      background:#17171b;
+      padding:18px;
     }
-    #photoInput { display: none; }
+    .principle b{
+      width:42px;height:42px;
+      display:grid;place-items:center;
+      border-radius:13px;
+      background:rgba(108,124,255,.14);
+      color:#aeb5ff;
+    }
+    .principle strong{display:block;margin-bottom:3px}
+    .principle span{color:#8f8f99;font-size:.88rem}
 
-    .about-text p { color: rgba(232,224,208,0.75); margin-bottom: 1.2rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-    .tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.4rem 0.9rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
+    /* ---------- EXPERIENCE, NOT CV-LIKE ---------- */
+    .experience-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
     }
-    .tag.gold { border-color: var(--gold); color: var(--gold); }
-
-    /* ── SERVICES ── */
-    #services { background: var(--bg); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5px;
-      margin-top: 3rem;
-      border: 1px solid var(--border);
+    .experience-card{
+      border-top:1px solid #cbc5ba;
+      padding-top:18px;
     }
-    .service-card {
-      padding: 2.5rem;
-      border: 1px solid transparent;
-      background: var(--bg2);
-      transition: all 0.35s;
-      position: relative;
-      overflow: hidden;
+    .experience-card .date{
+      color:#88847c;
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-weight:700;
+      margin-bottom:22px;
     }
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
+    .experience-card h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.2rem;
+      line-height:1.2;
+      margin:0 0 6px;
     }
-    .service-card:hover { background: rgba(201,168,76,0.05); border-color: var(--border); }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block;
+    .experience-card .company{
+      color:var(--blue);
+      font-weight:700;
+      font-size:.9rem;
+      margin-bottom:14px;
     }
-    .service-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-    .service-card p { font-size: 0.95rem; color: rgba(232,224,208,0.65); line-height: 1.8; }
-
-    /* ── MUSIC ── */
-    #music {
-      background: var(--bg2);
-      position: relative;
-      overflow: hidden;
-    }
-    #music::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse 70% 50% at 80% 50%, rgba(123,94,167,0.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .music-intro { max-width: 600px; margin-bottom: 3.5rem; }
-    .music-intro p { color: rgba(232,224,208,0.7); }
-
-    .instruments-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-    .instrument {
-      background: var(--bg);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .instrument::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(123,94,167,0.08));
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .instrument:hover::before { opacity: 1; }
-    .instrument:hover { transform: translateY(-4px); }
-    .instrument-emoji { font-size: 2.8rem; display: block; margin-bottom: 0.8rem; }
-    .instrument h4 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 0.4rem;
-    }
-    .instrument-role {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
+    .experience-card p{
+      color:#6c6963;
+      font-size:.91rem;
+      margin:0;
     }
 
-    .music-offer {
-      margin-top: 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    /* ---------- ABOUT ---------- */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
     }
-    .offer-card {
-      padding: 2rem;
-      border: 1px solid var(--border);
-      position: relative;
+    .about-card{
+      border-radius:28px;
+      padding:32px;
+      background:#fff;
+      border:1px solid var(--line-dark);
     }
-    .offer-card::before {
-      content: attr(data-num);
-      position: absolute;
-      top: -1rem; left: 1.5rem;
-      font-family: 'Cinzel', serif;
-      font-size: 3.5rem;
-      color: rgba(201,168,76,0.08);
-      line-height: 1;
-      font-weight: 600;
+    .about-card h3{
+      font-family:"Manrope",sans-serif;
+      font-size:1.45rem;
+      margin:0 0 14px;
+      letter-spacing:-.035em;
     }
-    .offer-card h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 0.7rem;
+    .about-card p{
+      margin:0;
+      color:#6d6962;
     }
-    .offer-card p { font-size: 0.95rem; color: rgba(232,224,208,0.65); }
+    .about-card p+p{margin-top:13px}
+    .tool-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:20px;
+    }
+    .tool{
+      padding:8px 11px;
+      border-radius:999px;
+      border:1px solid #d7d2c8;
+      background:#f8f5ee;
+      font-size:.8rem;
+      font-weight:700;
+      color:#55534f;
+    }
+    .edu-list{
+      display:grid;
+      gap:0;
+      margin-top:7px;
+    }
+    .edu-item{
+      padding:16px 0;
+      border-top:1px solid #ded8cc;
+    }
+    .edu-item strong{display:block}
+    .edu-item span{color:#77736c;font-size:.88rem}
 
-    /* ── PSYCHOLOGY ── */
-    #psychology {
-      background: var(--bg);
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 5rem;
-      align-items: center;
+    /* ---------- CONTACT ---------- */
+    .contact{
+      background:
+        radial-gradient(circle at 80% 20%,rgba(108,124,255,.24),transparent 30%),
+        #0d0d0f;
     }
-    .psych-visual {
-      position: relative;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .contact-panel{
+      border-radius:32px;
+      padding:56px;
+      border:1px solid rgba(255,255,255,.09);
+      background:rgba(255,255,255,.035);
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:50px;
+      align-items:center;
     }
-    .psych-circle {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid;
-      animation: rotate linear infinite;
+    .contact-panel h2{color:#fff}
+    .contact-panel p{
+      max-width:590px;
+      color:#9f9faa;
+      margin:18px 0 0;
     }
-    .psych-circle:nth-child(1) {
-      width: 300px; height: 300px;
-      border-color: rgba(201,168,76,0.15);
-      animation-duration: 20s;
+    .contact-links{
+      display:grid;
+      gap:10px;
     }
-    .psych-circle:nth-child(2) {
-      width: 220px; height: 220px;
-      border-color: rgba(123,94,167,0.2);
-      animation-duration: 14s;
-      animation-direction: reverse;
+    .contact-link{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      padding:16px 18px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.1);
+      text-decoration:none;
+      background:#141418;
+      transition:.2s ease;
     }
-    .psych-circle:nth-child(3) {
-      width: 140px; height: 140px;
-      border-color: rgba(201,168,76,0.25);
-      animation-duration: 9s;
+    .contact-link:hover{
+      border-color:rgba(216,255,104,.45);
+      transform:translateX(3px);
     }
-    .psych-core {
-      position: relative; z-index: 1;
-      text-align: center;
+    .contact-link small{
+      display:block;
+      color:#777783;
+      font-size:.72rem;
+      margin-bottom:3px;
     }
-    .psych-core span {
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      display: block;
-    }
-    .psych-core strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream);
-    }
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-    .psych-text p { color: rgba(232,224,208,0.7); margin-bottom: 1rem; }
-    .psych-detail {
-      margin-top: 1.5rem;
-      padding: 1.5rem;
-      border-left: 2px solid var(--gold);
-      background: rgba(201,168,76,0.04);
-    }
-    .psych-detail p { font-style: italic; color: rgba(232,224,208,0.6); font-size: 0.95rem; }
+    .contact-link strong{font-size:.9rem}
+    .contact-link b{color:var(--lime)}
 
-    /* ── GALLERY ── */
-    #gallery {
-      background: var(--bg2);
+    footer{
+      border-top:1px solid var(--line);
+      padding:26px 0;
+      color:#777781;
+      font-size:.82rem;
+      background:#0b0b0d;
     }
-    .gallery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
     }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      min-height: 300px;
-    }
-    .gallery-slot {
-      background: var(--bg);
-      aspect-ratio: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      cursor: pointer;
-      transition: background 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .gallery-slot:hover { background: rgba(201,168,76,0.06); }
-    .gallery-slot img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: none;
-    }
-    .gallery-slot img.loaded { display: block; }
-    .gallery-slot .slot-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .gallery-slot svg { opacity: 0.2; }
-    #galleryInput { display: none; }
+    .footer-row a{text-decoration:none;color:#bbbcc4}
 
-    /* ── CONTACT ── */
-    #contact {
-      background: var(--bg);
-      text-align: center;
-      padding: 8rem 4rem;
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:.65s ease;
     }
-    #contact .divider { margin: 1.5rem auto; }
-    #contact p { color: rgba(232,224,208,0.6); max-width: 500px; margin: 0 auto 2.5rem; }
-    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-    .contact-link {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0.7rem 1.5rem;
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-    }
-    .contact-link:hover { color: var(--gold); border-color: var(--gold); }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--muted);
+    .reveal.visible{
+      opacity:1;
+      transform:none;
     }
 
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
+    @media(max-width:960px){
+      .hero-grid,.section-head,.work-grid,.strategy-grid,.contact-panel{grid-template-columns:1fr}
+      .hero-grid{align-items:start;gap:34px}
+      .hero-side{max-width:650px}
+      .cap-grid,.experience-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr}
+      .contact-panel{padding:42px 32px}
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:74px;
+        left:20px;
+        right:20px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        padding:12px;
+        border-radius:18px;
+        border:1px solid rgba(255,255,255,.09);
+        background:#131317;
+        box-shadow:var(--shadow);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{display:block;padding:10px 12px;border-radius:10px}
+      .nav-links .contact-pill{text-align:center;margin-top:4px}
+      .menu-btn{display:block}
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      section { padding: 4rem 1.5rem; }
-      #about, #psychology { grid-template-columns: 1fr; gap: 2.5rem; }
-      .instruments-grid { grid-template-columns: repeat(3, 1fr); }
-      .music-offer { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      #hero { padding: 7rem 1.5rem 3rem; }
+    @media(max-width:640px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .section{padding:76px 0}
+      .hero-grid{padding:70px 0 62px}
+      h1{font-size:clamp(4rem,19vw,6rem)}
+      .cap-grid,.experience-grid{grid-template-columns:1fr}
+      .quick-facts{grid-template-columns:1fr}
+      .work-card{min-height:430px;padding:24px}
+      .work-card.cream{min-height:300px}
+      .graphic-board{width:75%;right:-90px}
+      .contact-panel{padding:30px 20px}
+      .footer-row{flex-direction:column;text-align:center}
     }
-    @media (max-width: 600px) {
-      .instruments-grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="file:///C:/Users/LOQ/Downloads/index.html#hero" class="nav-logo">MS</a>
-  <ul class="nav-links">
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#about">About</a></li>
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#services">Services</a></li>
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#music">Music</a></li>
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#psychology">Studies</a></li>
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#gallery">Gallery</a></li>
-    <li><a href="file:///C:/Users/LOQ/Downloads/index.html#contact">Contact</a></li>
-  </ul>
-</nav>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-dot"></span>
+        <span>Shrijan Maharjan</span>
+      </a>
 
-<!-- FLOATING NOTES -->
-<div id="notes-container" aria-hidden="true"><div class="note" style="left: 95.7271vw; top: 100vh; font-size: 1.46753rem; opacity: 0; animation-duration: 16.9235s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 94.621vw; top: 100vh; font-size: 1.24428rem; opacity: 0; animation-duration: 15.3129s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 86.744vw; top: 100vh; font-size: 2.38159rem; opacity: 0; animation-duration: 17.335s; animation-delay: 0s;">𝅘𝅥𝅮</div><div class="note" style="left: 17.8256vw; top: 100vh; font-size: 1.96217rem; opacity: 0; animation-duration: 15.5541s; animation-delay: 0s;">♪</div><div class="note" style="left: 83.9775vw; top: 100vh; font-size: 2.1777rem; opacity: 0; animation-duration: 11.0254s; animation-delay: 0s;">♩</div><div class="note" style="left: 53.122vw; top: 100vh; font-size: 1.63283rem; opacity: 0; animation-duration: 13.9102s; animation-delay: 0s;">𝅘𝅥𝅮</div><div class="note" style="left: 47.9103vw; top: 100vh; font-size: 1.59814rem; opacity: 0; animation-duration: 16.3198s; animation-delay: 0s;">♪</div><div class="note" style="left: 20.7246vw; top: 100vh; font-size: 1.73134rem; opacity: 0; animation-duration: 10.4882s; animation-delay: 0s;">♪</div><div class="note" style="left: 45.4834vw; top: 100vh; font-size: 1.18043rem; opacity: 0; animation-duration: 18.1372s; animation-delay: 0s;">♩</div><div class="note" style="left: 94.871vw; top: 100vh; font-size: 1.04627rem; opacity: 0; animation-duration: 13.8453s; animation-delay: 0s;">𝄞</div><div class="note" style="left: 96.4213vw; top: 100vh; font-size: 2.41181rem; opacity: 0; animation-duration: 10.0167s; animation-delay: 0s;">♩</div><div class="note" style="left: 33.0403vw; top: 100vh; font-size: 1.62022rem; opacity: 0; animation-duration: 8.81347s; animation-delay: 0s;">♬</div><div class="note" style="left: 25.5796vw; top: 100vh; font-size: 2.18588rem; opacity: 0; animation-duration: 9.30924s; animation-delay: 0s;">𝅘𝅥𝅮</div></div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-inner">
-    <p class="hero-tag">— Digital · Music · Psychology —</p>
-    <h1>Shrijan<br><span>MS</span></h1>
-    <p class="hero-sub">Digital marketing strategist, musician of sacred Nepali instruments, and a student of the human mind.</p>
-    <div class="hero-ctas">
-      <a href="file:///C:/Users/LOQ/Downloads/index.html#services" class="btn btn-fill">My Services</a>
-      <a href="file:///C:/Users/LOQ/Downloads/index.html#contact" class="btn">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-photo-area reveal visible">
-    <div class="photo-frame" id="profilePhotoFrame" title="Click to upload your photo">
-      <img id="profilePhoto" alt="Shrijan" src="blob:null/14cf0359-7fda-472c-b0fe-6a660703fa01" class="loaded">
-      <div class="photo-placeholder" id="profilePlaceholder" style="display: none;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" color="#c9a84c">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
         </svg>
-        <p>Click to upload<br>your photo</p>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="contact-pill" href="#contact">Let’s talk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="hero-tag">Digital Marketing Professional · Kathmandu</div>
+
+        <h1>
+          I build brands
+          <span>people notice.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Content strategy, social media, SEO, digital campaigns and brand communication —
+          shaped by a strong understanding of audience behaviour and customer experience.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See selected work</a>
+          <a class="btn btn-ghost" href="mailto:shrijanmaharjan26@gmail.com">Email me</a>
+        </div>
       </div>
-    </div>
-    <input type="file" id="photoInput" accept="image/*">
-  </div>
 
-  <div class="about-text reveal visible">
-    <p class="section-label">About Me</p>
-    <h2>Creativity<br>Meets Strategy</h2>
-    <div class="divider"></div>
-    <p>I am Shrijan — a digital marketing professional with a passion for growing brands online through data-driven strategies and compelling storytelling. My work spans SEO, social media, content creation, and paid campaigns.</p>
-    <p>Beyond the screen, I carry the music of Nepal in my hands — from the resonant dhime drum to the soulful flute. I teach and perform, preserving tradition while embracing modern artistry.</p>
-    <p>I am currently pursuing a <strong>Master's degree in Psychology</strong>, deepening my understanding of human behaviour to craft marketing and communication that truly connects.</p>
-    <div class="tags">
-      <span class="tag gold">Digital Marketing</span>
-      <span class="tag gold">Musician</span>
-      <span class="tag gold">MSc Psychology</span>
-      <span class="tag">Nepal</span>
-      <span class="tag">Educator</span>
-    </div>
-  </div>
-</section>
+      <aside class="hero-side reveal">
+        <div class="hero-card">
+          <div class="small">What I focus on</div>
+          <h3>Content that supports real business growth — not content for the sake of posting.</h3>
+          <p>
+            I connect brand story, customer intent and platform strategy to create stronger digital communication.
+          </p>
+        </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="reveal visible">
-    <p class="section-label">What I Do</p>
-    <h2>Digital Marketing<br>Services</h2>
-    <div class="divider"></div>
-    <p style="color:rgba(232,224,208,0.6); max-width:580px;">From building your brand's voice online to converting visitors into loyal customers — I help individuals and businesses grow digitally.</p>
-  </div>
+        <div class="quick-facts">
+          <div class="fact">
+            <strong>Content</strong>
+            <span>Strategy · Storytelling · Creation</span>
+          </div>
+          <div class="fact">
+            <strong>Growth</strong>
+            <span>Social · SEO · Campaigns</span>
+          </div>
+          <div class="fact">
+            <strong>Brands</strong>
+            <span>Product + Service sectors</span>
+          </div>
+          <div class="fact">
+            <strong>Psychology</strong>
+            <span>Audience & behaviour insight</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
 
-  <div class="services-grid reveal visible">
-    <div class="service-card">
-      <span class="service-icon">📈</span>
-      <h3>Social Media Marketing</h3>
-      <p>Strategic content planning, community management, and growth campaigns across Instagram, Facebook, TikTok, and more.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🔍</span>
-      <h3>SEO &amp; Content Strategy</h3>
-      <p>Keyword research, on-page optimisation, and long-form content that ranks and converts.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🎯</span>
-      <h3>Paid Advertising</h3>
-      <p>ROI-focused ad campaigns on Google, Meta, and YouTube — targeting the right audience at the right moment.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">✍️</span>
-      <h3>Brand Identity &amp; Copywriting</h3>
-      <p>Crafting your brand's story, voice, and visual language that resonates deeply with your target audience.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📧</span>
-      <h3>Email Marketing</h3>
-      <p>Building automated sequences, newsletters, and drip campaigns that nurture and convert leads into customers.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📊</span>
-      <h3>Analytics &amp; Reporting</h3>
-      <p>Data interpretation, performance dashboards, and actionable insights to continually optimise your marketing efforts.</p>
-    </div>
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section id="music">
-  <div class="music-intro reveal visible">
-    <p class="section-label">The Art of Sound</p>
-    <h2>Music &amp;<br>Instruments</h2>
-    <div class="divider"></div>
-    <p>Rooted in Nepali musical tradition, I play and teach a range of instruments — from ancient folk percussion to the expressive guitar. Music is my meditation and my message.</p>
-  </div>
-
-  <div class="instruments-grid reveal visible">
-    <div class="instrument">
-      <span class="instrument-emoji">🎵</span>
-      <h4>Flute</h4>
-      <span class="instrument-role">Play &amp; Teach</span>
-    </div>
-    <div class="instrument">
-      <span class="instrument-emoji">🥁</span>
-      <h4>Pachima</h4>
-      <span class="instrument-role">Play &amp; Teach</span>
-    </div>
-    <div class="instrument">
-      <span class="instrument-emoji">🪘</span>
-      <h4>Dhime</h4>
-      <span class="instrument-role">Play &amp; Teach</span>
-    </div>
-    <div class="instrument">
-      <span class="instrument-emoji">🎶</span>
-      <h4>Madal</h4>
-      <span class="instrument-role">Play &amp; Teach</span>
-    </div>
-    <div class="instrument">
-      <span class="instrument-emoji">🎸</span>
-      <h4>Guitar</h4>
-      <span class="instrument-role">Play &amp; Teach</span>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Social Media Strategy</span>
+      <span>Content Creation</span>
+      <span>Brand Communication</span>
+      <span>SEO Content</span>
+      <span>Meta Campaigns</span>
+      <span>Website Content</span>
+      <span>Analytics</span>
+      <span>Social Media Strategy</span>
+      <span>Content Creation</span>
+      <span>Brand Communication</span>
+      <span>SEO Content</span>
+      <span>Meta Campaigns</span>
+      <span>Website Content</span>
+      <span>Analytics</span>
     </div>
   </div>
 
-  <div class="music-offer reveal visible">
-    <div class="offer-card" data-num="01">
-      <h3>Live Performance</h3>
-      <p>Available for cultural events, concerts, festivals, and private ceremonies. I bring the spirit of Nepali folk music to any occasion with authenticity and energy.</p>
+  <main>
+    <section class="section light" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Marketing built around the brand.</h2>
+          </div>
+          <p>
+            A few areas where I have worked across content, brand visibility, digital touchpoints and customer communication.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card large reveal">
+            <div class="graphic-board"></div>
+            <div class="work-top">
+              <span class="work-label">Product Brand · Content + SEO</span>
+              <span class="work-arrow">↗</span>
+            </div>
+            <div>
+              <h3>Nepal Silk & Pashmina Craft</h3>
+              <p>
+                Developed educational and storytelling-based content to build awareness of Nepali silk and pashmina
+                for local and international audiences, while supporting website content and SEO-focused blog initiatives.
+              </p>
+              <div class="work-meta">
+                <span>Content Strategy</span>
+                <span>Storytelling</span>
+                <span>SEO Content</span>
+                <span>Website Content</span>
+              </div>
+            </div>
+          </article>
+
+          <div class="work-stack">
+            <article class="work-card dark reveal">
+              <div class="work-top">
+                <span class="work-label">Service Brand · Social Media</span>
+                <span class="work-arrow">↗</span>
+              </div>
+              <div>
+                <h3>Tranquility Spa</h3>
+                <p>
+                  Planned and executed social media campaigns around memberships, wellness services and seasonal offers
+                  across Facebook and Instagram, supporting brand awareness and customer acquisition.
+                </p>
+                <div class="work-meta">
+                  <span>Social Media</span>
+                  <span>Campaigns</span>
+                  <span>Brand Awareness</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card cream reveal">
+              <div class="work-top">
+                <span class="work-label">Digital Experience</span>
+                <span class="work-arrow">↗</span>
+              </div>
+              <div>
+                <h3>Multi-platform Content</h3>
+                <p>
+                  Maintained and managed website, mobile application and third-party platform content,
+                  helping keep customer-facing digital information consistent and current.
+                </p>
+                <div class="work-meta">
+                  <span>Website</span>
+                  <span>Mobile App</span>
+                  <span>Content Management</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="capabilities" style="padding-top:20px">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2>What I can help with.</h2>
+          </div>
+          <p>
+            From planning what a brand should say to managing where and how that message appears.
+          </p>
+        </div>
+
+        <div class="cap-grid">
+          <article class="cap-card reveal">
+            <div class="cap-num">01</div>
+            <h3>Social Media Management</h3>
+            <p>Platform planning, campaign coordination, content scheduling and brand consistency across social channels.</p>
+          </article>
+
+          <article class="cap-card reveal">
+            <div class="cap-num">02</div>
+            <h3>Content Strategy & Creation</h3>
+            <p>Educational, storytelling-led and customer-focused content built around business objectives.</p>
+          </article>
+
+          <article class="cap-card reveal">
+            <div class="cap-num">03</div>
+            <h3>Brand Communication</h3>
+            <p>Clearer messaging, tone and digital communication for both product-based and service-based brands.</p>
+          </article>
+
+          <article class="cap-card reveal">
+            <div class="cap-num">04</div>
+            <h3>SEO & Website Content</h3>
+            <p>On-page SEO, basic technical awareness, blog planning and website content management.</p>
+          </article>
+
+          <article class="cap-card reveal">
+            <div class="cap-num">05</div>
+            <h3>Meta Advertising</h3>
+            <p>Campaign support and audience-focused communication across Facebook and Instagram.</p>
+          </article>
+
+          <article class="cap-card reveal">
+            <div class="cap-num">06</div>
+            <h3>Analytics & Reporting</h3>
+            <p>Using platform and website data to understand performance and improve future content decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section strategy" id="approach">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">My approach</p>
+            <h2>Marketing with a psychology lens.</h2>
+          </div>
+          <p>
+            My academic training in psychology strengthens how I think about audiences, communication and customer behaviour.
+          </p>
+        </div>
+
+        <div class="strategy-grid">
+          <div class="strategy-copy reveal">
+            <h3>Creative work should still have a reason.</h3>
+            <p>
+              I like marketing that begins with a clear question: who is this for, what do they need to understand,
+              and what should they feel or do next? That approach helps connect creative content with practical business goals.
+            </p>
+          </div>
+
+          <div class="principles">
+            <div class="principle reveal">
+              <b>01</b>
+              <div>
+                <strong>Understand the audience</strong>
+                <span>Behaviour, context, intent and expectations come before the post.</span>
+              </div>
+            </div>
+            <div class="principle reveal">
+              <b>02</b>
+              <div>
+                <strong>Shape the message</strong>
+                <span>Turn brand information into content people can quickly understand and remember.</span>
+              </div>
+            </div>
+            <div class="principle reveal">
+              <b>03</b>
+              <div>
+                <strong>Learn from performance</strong>
+                <span>Use analytics and response patterns to improve future content and campaigns.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>Built through real brand work.</h2>
+          </div>
+          <p>
+            My background includes both product and service brands, giving me experience with different customer journeys and communication needs.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <div class="date">Jul 2025 — Present</div>
+            <h3>Digital Marketing Executive</h3>
+            <div class="company">Nepal Silk and Pashmina Craft</div>
+            <p>Content strategy, educational storytelling, website content and SEO-focused blog initiatives.</p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="date">Jul 2024 — Apr 2025</div>
+            <h3>Marketing Coordinator</h3>
+            <div class="company">Tranquility Spa · Head Office</div>
+            <p>Social campaigns, customer acquisition content, and website/mobile/third-party content management.</p>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="date">Hospitality Background</div>
+            <h3>Guest Relations Officer</h3>
+            <div class="company">Tranquility Spa · The Soaltee Kathmandu</div>
+            <p>Customer communication, memberships, service recovery and long-term guest relationship building.</p>
+          </article>
+        </div>
+
+        <div class="about-grid" style="margin-top:54px">
+          <article class="about-card reveal">
+            <h3>About me</h3>
+            <p>
+              I’m a digital marketing professional focused on social media, content creation, brand communication,
+              website content and audience engagement.
+            </p>
+            <p>
+              My previous customer-facing experience in hospitality also gives me a practical understanding of
+              service, customer expectations and relationship building — useful context when marketing real businesses.
+            </p>
+          </article>
+
+          <article class="about-card reveal">
+            <h3>Tools & learning</h3>
+            <div class="tool-wrap">
+              <span class="tool">Meta Business Suite</span>
+              <span class="tool">Canva</span>
+              <span class="tool">CapCut</span>
+              <span class="tool">Google Analytics</span>
+              <span class="tool">Google Workspace</span>
+              <span class="tool">AI-Assisted Content Creation</span>
+            </div>
+
+            <div class="edu-list">
+              <div class="edu-item">
+                <strong>M.A. Psychology — In Progress</strong>
+                <span>Tribhuvan University · 2024–Present</span>
+              </div>
+              <div class="edu-item">
+                <strong>B.A. Psychology & Social Work</strong>
+                <span>St. Xavier’s College · 2019–2024</span>
+              </div>
+              <div class="edu-item">
+                <strong>Digital Marketing Course</strong>
+                <span>Broadway Infosys · in coordination with Kathmandu Metropolitan City</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div>
+            <p class="eyebrow" style="color:var(--lime)">Contact</p>
+            <h2>Have a brand that needs stronger digital communication?</h2>
+            <p>
+              I’m open to digital marketing opportunities, collaborations and brand projects involving content,
+              social media, SEO and digital growth.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:shrijanmaharjan26@gmail.com">
+              <div>
+                <small>Email</small>
+                <strong>shrijanmaharjan26@gmail.com</strong>
+              </div>
+              <b>↗</b>
+            </a>
+
+            <a class="contact-link" href="tel:+9779863426739">
+              <div>
+                <small>Phone</small>
+                <strong>+977 9863426739</strong>
+              </div>
+              <b>↗</b>
+            </a>
+
+            <a class="contact-link" href="https://wa.me/9779863426739" target="_blank" rel="noopener noreferrer">
+              <div>
+                <small>WhatsApp</small>
+                <strong>Start a conversation</strong>
+              </div>
+              <b>↗</b>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Shrijan Maharjan · Digital Marketing Portfolio</span>
+      <a href="#home">Back to top ↑</a>
     </div>
-    <div class="offer-card" data-num="02">
-      <h3>Music Lessons</h3>
-      <p>One-on-one and group lessons for all levels — from complete beginners to advancing players. Structured curriculum tailored to your goals, in-person or online.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- PSYCHOLOGY -->
-<section id="psychology">
-  <div class="psych-visual reveal visible">
-    <div class="psych-circle"></div>
-    <div class="psych-circle"></div>
-    <div class="psych-circle"></div>
-    <div class="psych-core">
-      <span>MSc</span>
-      <strong>Psychology</strong>
-    </div>
-  </div>
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-  <div class="psych-text reveal visible">
-    <p class="section-label">Academic Pursuit</p>
-    <h2>The Study of<br>the Mind</h2>
-    <div class="divider"></div>
-    <p>I am currently enrolled in a <strong>Master's programme in Psychology</strong>, exploring the science of human thought, behaviour, and emotion.</p>
-    <p>This academic journey profoundly informs my work in digital marketing — understanding cognitive biases, emotional triggers, and decision-making helps me craft campaigns that connect on a deeper human level.</p>
-    <p>Psychology also enriches my music teaching: adapting to each student's learning style, building confidence, and nurturing creativity.</p>
-    <div class="psych-detail">
-      <p>"The intersection of psychology, art, and strategy is where truly meaningful communication is born."</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="gallery-header reveal visible">
-    <div>
-      <p class="section-label">Portfolio</p>
-      <h2>Photos &amp;<br>Moments</h2>
-    </div>
-    <button class="btn" onclick="document.getElementById(&#39;galleryInput&#39;).click()">+ Upload Photos</button>
-  </div>
-
-  <input type="file" id="galleryInput" accept="image/*" multiple="">
-
-  <div class="gallery-grid reveal visible" id="galleryGrid"><div class="gallery-slot"><img src="blob:null/29e1dfc0-f115-4918-ab02-de504d7e80fa" alt="Gallery image 1" class="loaded"></div><div class="gallery-slot"><img src="blob:null/4c9c0467-c7e4-4f27-85af-7c76e5570f4f" alt="Gallery image 2" class="loaded"></div><div class="gallery-slot"><img src="blob:null/3a518cac-6468-46fb-8632-ea0bfd0125f2" alt="Gallery image 3" class="loaded"></div><div class="gallery-slot">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <span class="slot-label">Add Photo</span></div><div class="gallery-slot">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <polyline points="21 15 16 10 5 21"></polyline>
-          </svg>
-          <span class="slot-label">Add Photo</span></div></div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="reveal visible">
-    <p class="section-label">Let's Connect</p>
-    <h2>Work With Me</h2>
-    <div class="divider"></div>
-    <p>Whether you need a digital marketing strategy, a music performance, or lessons — I'd love to hear from you.</p>
-<div class="contact-links">
-  <a href="mailto:shrijanmaharjan26@email.com" class="contact-link">Email me</a>
-
-  <a href="https://wa.me/9779863426739" target="_blank" class="contact-link">
-    Chat on WhatsApp
-  </a>
-
-  <a href="https://instagram.com/mshrijan" target="_blank" class="contact-link">
-    View Instagram
-  </a>
-</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span>© 2025 Shrijan MS — mshrijan.com.np</span>
-  <span>Digital · Music · Psychology</span>
-</footer>
-
-<script>
-  /* ── Floating music notes ── */
-  const noteChars = ['♩','♪','♫','♬','𝅘𝅥𝅮','𝄞'];
-  const container = document.getElementById('notes-container');
-  function spawnNote() {
-    const note = document.createElement('div');
-    note.className = 'note';
-    note.textContent = noteChars[Math.floor(Math.random() * noteChars.length)];
-    note.style.left = Math.random() * 100 + 'vw';
-    note.style.top = '100vh';
-    note.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
-    note.style.opacity = '0';
-    const dur = 8 + Math.random() * 12;
-    note.style.animationDuration = dur + 's';
-    note.style.animationDelay = '0s';
-    container.appendChild(note);
-    setTimeout(() => note.remove(), dur * 1000);
-  }
-  setInterval(spawnNote, 1200);
-
-  /* ── Scroll reveal ── */
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), 100);
-        observer.unobserve(e.target);
-      }
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
 
-  /* ── Profile photo upload ── */
-  document.getElementById('profilePhotoFrame').addEventListener('click', () => {
-    document.getElementById('photoInput').click();
-  });
-  document.getElementById('photoInput').addEventListener('change', function() {
-    const file = this.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    const img = document.getElementById('profilePhoto');
-    img.src = url;
-    img.classList.add('loaded');
-    document.getElementById('profilePlaceholder').style.display = 'none';
-  });
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded","false");
+      });
+    });
 
-  /* ── Gallery ── */
-  const SLOTS = 8;
-  const grid = document.getElementById('galleryGrid');
-  let galleryImages = [];
+    const revealEls = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold:.12 });
 
-  function renderGallery() {
-    grid.innerHTML = '';
-    for (let i = 0; i < SLOTS; i++) {
-      const slot = document.createElement('div');
-      slot.className = 'gallery-slot';
-      if (galleryImages[i]) {
-        const img = document.createElement('img');
-        img.src = galleryImages[i];
-        img.alt = 'Gallery image ' + (i + 1);
-        img.classList.add('loaded');
-        slot.appendChild(img);
-      } else {
-        slot.innerHTML = `
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <span class="slot-label">Add Photo</span>`;
-        slot.addEventListener('click', () => document.getElementById('galleryInput').click());
-      }
-      grid.appendChild(slot);
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add("visible"));
     }
-  }
-  renderGallery();
 
-  document.getElementById('galleryInput').addEventListener('change', function() {
-    const files = Array.from(this.files);
-    files.forEach(file => {
-      if (galleryImages.length < SLOTS) {
-        galleryImages.push(URL.createObjectURL(file));
-      }
-    });
-    renderGallery();
-    this.value = '';
-  });
-</script>
-
-
-</body></html>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
